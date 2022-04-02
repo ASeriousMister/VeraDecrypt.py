@@ -5,7 +5,7 @@ Veradecrypt tryes to unlock volumes encrypted with veracrypt trying passwords ta
 
 ``` sudo python3 VeraDecrypt.py -v vol_demo -p plist ```
 
-### Notes
+### Additional notes
 For eencrypted devices you can use, i.e. /dev/sdb1 instead of volume name
 To know the device name use
 
