@@ -1,0 +1,2 @@
+# VeraDecrypt.py
+Veradecrypt tryes to unlock volumes encrypted with veracrypt trying passwords taken from a desiderd list. It runs under Linux with Python 3.x and needs Veracrypt installed and root privileges. I suggest you to put the script, the volume to decrypt and the password list in the same working directory. You can use the vol_demo and the plist files to test the script in your enviroment.
