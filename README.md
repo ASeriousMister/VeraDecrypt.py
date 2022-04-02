@@ -11,13 +11,13 @@ To know the device name use
 
 ``` sudo fdisk -l  ```
 
-when it is connected
+when it is connected.
 
 The tool was tested on a system with English language set. If you are using another language and Veracrypt is giving different answers running
 
 ``` sudo veracrypt --mount vol_demo /mnt -password password --non-interactive ```
 
-intentionally using a wrong password, edit this line
+intentionally using a wrong password, edit this line VeraCrypt.py file.
 
 ``` if ('Error:' in procreturn): ```
 
