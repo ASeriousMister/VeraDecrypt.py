@@ -19,8 +19,7 @@ The tool was tested on a system with English language set. If you are using anot
 
 intentionally using a wrong password, edit this line VeraCrypt.py file.
 
-``` if ('Error:' in procreturn): ```
-
+69 ``` if ('Error:' in procreturn): ```
 
 ### Disclaimer
 Please only use this tool on systems or on volumes you have permission to access! Ethical use only.
