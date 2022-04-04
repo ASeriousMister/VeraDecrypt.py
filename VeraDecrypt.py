@@ -23,7 +23,7 @@ print('Arguments: -v for veracrypt volume to crack and -p for password list\n')
 parser = argparse.ArgumentParser(description='VeraCrypt Cracker')
 parser.add_argument('-v', metavar='volume', type=str,
                     required=True, help='Path to volume')
-parser.add_argument('-p', metavar='password', type=str,
+parser.add_argument('-p', metavar='password_list', type=str,
                     required=True, help='Password list')
 args = parser.parse_args()
 volume = args.v
