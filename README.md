@@ -21,6 +21,10 @@ intentionally using a wrong password, edit this line VeraCrypt.py file.
 
 69 ``` if ('Error:' in procreturn): ```
 
+If password is found and the volume gets mounted on slot 1, dismountit with 
+
+``` sudo veracrypt --text --dismount --slot 1 ```
+
 ### Disclaimer
 Please only use this tool on systems or on volumes you have permission to access! Ethical use only.
 Any actions and or activities related to this tool is solely your responsibility.
