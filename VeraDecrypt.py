@@ -29,6 +29,20 @@ args = parser.parse_args()
 volume = args.v
 plist = args.p
 
+#Check if VeraCrypt has a volume mounted on slot 1 (it needs to be free)
+print('If VeraDecrypt finds the correct password, it will mount the volume on slot 1')
+print('VeraDecrypt will now dismount volumes mounted on slot 1')
+print('Save your work before proceding!')
+ans = input('are you ready? (y/n)')
+if (ans == 'y' or ans == 'Y'):
+    os.system('sudo veracrypt --text --dismount --slot 1')
+elif (ans == 'n' or ans == 'N'):
+    print('Ok, nothing done. See you later')
+    quit()
+else:
+    print('No correct answer provided, exiting')
+    quit()
+
 #Check number of passwords to check adn show it
 f = open(plist, 'r')
 n = len(f.readlines())  # number of passwords to check
@@ -71,10 +85,9 @@ while(i < n):
             print('Wrong password')
         else:
             print(f'\n-----PASSWORD FOUND: {password}\n')
+            os.system('sudo veracrypt --text --dismount --slot 1')
             quit()
 print('----------\nPASSWORD NOT FOUND!\nTry another list\n----------')
 # prints password skipped to try them manually in GUI version
 if (len(skipped)) > 0:
     print(f'Skipped passwords to try in GUI: {skipped}')
-
-#To dismount mounted volume sudo veracrypt --text --dismount --slot 1
