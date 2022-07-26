@@ -8,7 +8,7 @@ Veradecrypt tryes to unlock volumes encrypted with veracrypt trying passwords ta
 ``` sudo python3 VeraDecrypt.py -v vol_demo -p plist ```
 
 ### Additional notes
-For eencrypted devices you can use, i.e. /dev/sdb1 instead of volume name
+For eencrypted devices you can use, i.e. /dev/sdb1 instead of volume name.
 To know the device name use
 
 ``` sudo fdisk -l  ```
@@ -19,9 +19,9 @@ The tool was tested on a system with English language set. If you are using anot
 
 ``` sudo veracrypt --mount vol_demo /mnt -password password --non-interactive ```
 
-intentionally using a wrong password, edit this line VeraCrypt.py file.
+intentionally using a wrong password, edit this line VeraCrypt.py file, replacing 'Error' with the given string.
 
-69 ``` if ('Error:' in procreturn): ```
+83 ``` if ('Error:' in procreturn): ```
 
 If password is found and the volume gets mounted on slot 1, dismountit with 
 
