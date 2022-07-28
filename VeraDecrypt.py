@@ -20,7 +20,7 @@ print('This tool aims to unlock Veracrypt volumes using a list of passwords')
 print('Arguments: -v for veracrypt volume to crack and -p for password list\n')
 
 #parse arguments given by user executing the tool
-parser = argparse.ArgumentParser(description='VeraCrypt Cracker')
+parser = argparse.ArgumentParser(description='VeraCrypt password checker')
 parser.add_argument('-v', metavar='volume', type=str,
                     required=True, help='Path to volume')
 parser.add_argument('-p', metavar='password_list', type=str,
