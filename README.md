@@ -7,6 +7,9 @@ Veradecrypt tryes to unlock volumes encrypted with veracrypt trying passwords ta
 
 ``` sudo python3 VeraDecrypt.py -v vol_demo -p plist ```
 
+## Tutorial
+[Here](https://anubitux.org/try-to-unlock-a-veracrypt-volume-with-anubitux/) you can see how the tool works.
+
 ### Additional notes
 For eencrypted devices you can use, i.e. /dev/sdb1 instead of volume name.
 To know the device name use
@@ -21,7 +24,7 @@ The tool was tested on a system with English language set. If you are using anot
 
 intentionally using a wrong password, edit this line VeraCrypt.py file, replacing 'Error' with the given string.
 
-83 ``` if ('Error:' in procreturn): ```
+111 ``` if ('Error:' in procreturn): ```
 
 If password is found and the volume gets mounted on slot 1, dismountit with 
 
