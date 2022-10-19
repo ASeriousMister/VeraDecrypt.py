@@ -72,6 +72,30 @@ while tour0:
     else:
         print(color.RED + 'No correct answer provided, try again' + color.END)
 
+# Check if user wants to provide PIM
+set_pim = 0
+tour1 = True
+while tour1:
+    print(color.DARKCYAN + 'Do you want to provide a PIM to combine with passwords?(y/n)' + color.END)
+    print(color.YELLOW + 'If you do not know what PIM is say n' + color.END)
+    ans1 = input()
+    if ans1 == 'y' or ans1 == 'Y':
+        tour2 = True
+        while tour2:
+            pim = input('Please, insert PIM\n')
+            if pim.isdigit():
+                print(color.GREEN + 'PIM accepted' + color.END)
+                tour2 = False
+            else:
+                print(color.RED + 'Unaccepted value, PIM is a number' + color.END)
+        tour1 = False
+    elif ans1 == 'n' or ans1 == 'N':
+        print(color.GREEN + 'no PIM will be used' + color.END)
+        tour1 = False
+    else:
+        print(color.RED + 'Unaccepted answer. Please type y or n' + color.END)
+
+
 # Check number of passwords to check adn show it
 f = open(plist, 'r')
 n = len(f.readlines())  # number of passwords to check
@@ -104,7 +128,10 @@ while i < n:
         i += 1
         skipped.append(password)
     else:
-        cmd = 'sudo veracrypt --text --mount ' + volume + ' /mnt --password ' + password + ' --non-interactive'
+        if set_pim:
+            cmd = 'sudo veracrypt --text --mount ' + volume + ' /mnt --password ' + password + ' --pim ' + pim + '--non-interactive'
+        else:
+            cmd = 'sudo veracrypt --text --mount ' + volume + ' /mnt --password ' + password + ' --non-interactive'
         process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         out, err = process.communicate()
         procreturn = str(out, "utf-8").strip() if out else str(err, "utf-8").strip()
@@ -121,4 +148,3 @@ if (len(skipped)) > 0:
     print(color.CYAN + f'Skipped passwords to try in GUI:' + color.END)
     for pw in skipped:
         print('- ' + pw)
-        
