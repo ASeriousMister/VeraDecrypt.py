@@ -24,7 +24,7 @@ The tool was tested on a system with English language set. If you are using anot
 
 intentionally using a wrong password, edit this line VeraCrypt.py file, replacing 'Error' with the given string.
 
-111 ``` if ('Error:' in procreturn): ```
+138 ``` if ('Error:' in procreturn): ```
 
 If password is found and the volume gets mounted on slot 1, dismountit with 
 
